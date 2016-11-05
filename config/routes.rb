@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :accounts
   resources :provinces
   resources :order_statuses
   resources :sale_items

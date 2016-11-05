@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  percent_discount: 9.99
+  begin_date: 2016-11-05 18:28:12
+  end_date: 2016-11-05 18:28:12
+  product: one
+
+two:
+  percent_discount: 9.99
+  begin_date: 2016-11-05 18:28:12
+  end_date: 2016-11-05 18:28:12
+  product: two

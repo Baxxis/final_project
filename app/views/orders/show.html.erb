@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Order date:</strong>
+  <%= @order.order_date %>
+</p>
+
+<p>
+  <strong>Ship date:</strong>
+  <%= @order.ship_date %>
+</p>
+
+<p>
+  <strong>Pst:</strong>
+  <%= @order.pst %>
+</p>
+
+<p>
+  <strong>Gst:</strong>
+  <%= @order.gst %>
+</p>
+
+<p>
+  <strong>Hst:</strong>
+  <%= @order.hst %>
+</p>
+
+<p>
+  <strong>Customer:</strong>
+  <%= @order.customer %>
+</p>
+
+<p>
+  <strong>Order status:</strong>
+  <%= @order.order_status %>
+</p>
+
+<%= link_to 'Edit', edit_order_path(@order) %> |
+<%= link_to 'Back', orders_path %>

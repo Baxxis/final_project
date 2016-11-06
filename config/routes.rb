@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :delivery_addresses
   resources :accounts
   resources :provinces
   resources :order_statuses

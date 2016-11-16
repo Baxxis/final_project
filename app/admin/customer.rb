@@ -1,5 +1,7 @@
 ActiveAdmin.register Customer do
 
+permit_params :id, :name, :address, :city, :province_id, :postal_code, :phone, :email
+
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #

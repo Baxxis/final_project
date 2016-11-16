@@ -1,5 +1,7 @@
 ActiveAdmin.register DeliveryAddress do
 
+permit_params :id, :address, :city, :province_id, :postal_code
+
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #

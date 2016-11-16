@@ -1,5 +1,7 @@
 ActiveAdmin.register SaleItem do
 
+permit_params :id, :product_id, :percent_discount, :begin_Date, :end_date 
+
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #

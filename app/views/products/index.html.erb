@@ -1,7 +1,16 @@
-<% @products.each_slice(4) do |products| %>
-  <div class="row">
-    <% products.each do |product|%>
-      <%= render 'product', product: product %>
-    <% end %>
-  </div>
+<%= form_tag(index_path, :method => "get", id: "search-form") do %>
+<%= text_field_tag :search, params[:search], placeholder: "Search Products" %>
+<%= submit_tag "Search" %>
+<% end %>
+
+<% if @products.present? %>
+  <% @products.each_slice(4) do |products| %>
+    <div class="row">
+      <% products.each do |product|%>
+        <%= render 'product', product: product %>
+      <% end %>
+    </div>
+  <% end %>
+<% else %>
+  <p>There are no products containing the term(s) <%= params[:search] %>.</p>
 <% end %>

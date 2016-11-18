@@ -8,14 +8,10 @@ class ProductUploader < CarrierWave::Uploader::Base
   storage :file
   # storage :fog
 
-  CarrierWave.configure do |config|
-    config.root = Rails.root
-  end
-
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
-    "#{Rails.root}/assets/images/products/"
+    './assets/images/products'
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:

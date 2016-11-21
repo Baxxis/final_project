@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'pages/about'
+
+  get 'pages/contact_us'
+
   get '/', to: 'products#index', as: 'index'
   get '/products/:id', to: 'products#show', as: 'show'
   devise_for :admin_users, ActiveAdmin::Devise.config

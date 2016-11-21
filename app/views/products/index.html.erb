@@ -1,42 +1,59 @@
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">Daevok's Supplies</a>
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categories <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <% @categories.each do |c| %>
-              <li href="#"><%= c.name %></li>
-            <% end %>
-          </ul>
-        </li>
-      </ul>
-      <!-- <form class="navbar-form navbar-left">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
+<div class="row">
+  <div class="col-xs-12">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Daevok's Supplies</a>
         </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-      </form> -->
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
 
-<%= form_tag(index_path, :method => "get", id: "search-form") do %>
-<%= text_field_tag :search, params[:search], placeholder: "Search Products" %>
-<%= submit_tag "Search" %>
-<% end %>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <%= form_tag(index_path, :method => "get", id: "search-form", :class => "navbar-form navbar-right") do %>
+            <!-- <div class="form-group"> -->
+              <div class="input-group">
+                <div class="input-group-btn">
+                  <!-- <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">All <span class="caret"></span></button> -->
+                  <!-- <select class="form-control">
+                    <option value=0>All</option>
+                      <%= options_from_collection_for_select(@categories, :id, :name) %>
+                  </select> -->
+                  <%= select_tag(:category_id, content_tag(:option,'All',:value=>"0") + options_from_collection_for_select(@categories, :id, :name), options = {:class => "form-control"}) %>
+
+
+
+                </div><!-- button group -->
+                <%= text_field_tag :search, params[:search], placeholder: "Search Products", :class => "form-control" %>
+                <span class="input-group-btn">
+                  <input type="submit" class="btn btn-default" value="Search" />
+                  <!-- <%= submit_tag "Search", :class => "btn btn-default" %> -->
+                </span>
+              </div>
+          <% end %>
+          <a href="#">Contact Us</a>
+        </div>
+
+          <!-- <form class="navbar-form navbar-right">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Search">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+          </form> -->
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+  </div>
+</div>
+
+
+
+
 
 <% if @products.present? %>
   <% @products.each_slice(4) do |products| %>
@@ -49,3 +66,10 @@
 <% else %>
   <p>There are no products containing the term(s) <%= params[:search] %>.</p>
 <% end %>
+
+<script type="text/javascript">
+  $(".dropdown-menu li").click(function(){
+    var selText = $(this).text();
+    $(this).parents('.input-group-btn').find('.dropdown-toggle').html(selText+'<span class="caret"></span>');
+  });
+</script>

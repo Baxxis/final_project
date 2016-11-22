@@ -1,7 +1,7 @@
 # product class
 class Product < ApplicationRecord
   belongs_to :category
-  has_mmany :order_items
+  has_many :order_items
 
   default_scope { where(is_active: true) }
 

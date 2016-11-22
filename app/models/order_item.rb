@@ -25,17 +25,14 @@ class OrderItem < ApplicationRecord
   private
 
   def order_present
-    if order.nil?
-      errors.add(:order, "is not a valid order.")
-    end
+    errors.add(:order, 'is not a valid order.') if order.nil?
   end
 
   def product_present
-    if product.nil?
-      errors.add(:product, "is not a valid product")
-    end
+    errors.add(:product, 'is not a valid product.') if product.nil?
   end
 
   def finalize
     self[:price] = unit_price
+  end
 end

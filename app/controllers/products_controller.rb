@@ -24,7 +24,6 @@ class ProductsController < ApplicationController
   end
 
   def initialize_session
-    session[:cart] ||=
   end
 
   def increment_visit_count

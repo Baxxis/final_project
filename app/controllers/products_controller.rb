@@ -1,11 +1,12 @@
 # Product  class
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
+  before_action :initialize_cart
 
   def index
     @products = Product.all
     @categories = Category.all
-    get_products
+    retreive_products
   end
 
   def show
@@ -22,7 +23,16 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
   end
 
-  def get_products
+  def initialize_session
+    session[:cart] ||=
+  end
+
+  def increment_visit_count
+    session[:visit_count] += 1
+    @visit_count = session[:visit_count]
+  end
+
+  def retreive_products
     if params[:category_id] && params[:search]
       @products = Product.get_by_category_id(params[:category_id])
                          .search(params[:search]).order('created_at DESC')

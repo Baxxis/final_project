@@ -1,3 +1,7 @@
+<p>
+  You have visited this page <%= pluralize(session[:visit_count], 'time') %>.
+</p>
+
 <div class="row">
   <div class="col-xs-12">
     <nav class="navbar navbar-default">
@@ -25,9 +29,6 @@
                       <%= options_from_collection_for_select(@categories, :id, :name) %>
                   </select> -->
                   <%= select_tag(:category_id, content_tag(:option,'All',:value=>"0") + options_from_collection_for_select(@categories, :id, :name), options = {:class => "form-control"}) %>
-
-
-
                 </div><!-- button group -->
                 <%= text_field_tag :search, params[:search], placeholder: "Search Products", :class => "form-control" %>
                 <span class="input-group-btn">

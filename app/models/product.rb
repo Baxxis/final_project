@@ -1,6 +1,9 @@
 # product class
 class Product < ApplicationRecord
   belongs_to :category
+  has_mmany :order_items
+
+  default_scope { where(is_active: true) }
 
   def self.search(search)
     where('name LIKE ? or description LIKE ?', "%#{search}%", "%#{search}%")

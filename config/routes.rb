@@ -1,15 +1,6 @@
 Rails.application.routes.draw do
-  get 'order_items/create'
-
-  get 'order_items/update'
-
-  get 'order_items/destroy'
-
-  get 'carts/show'
-
-  get 'pages/about'
-
-  get 'pages/contact_us'
+  resources :cart, only: [:show]
+  resources :order_items, only: [:create, :update, :destroy]
 
   get '/', to: 'products#index', as: 'index'
   get '/products/:id', to: 'products#show', as: 'show'

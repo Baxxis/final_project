@@ -1,9 +1,23 @@
 # orderitem controller
 class OrderItemsController < ApplicationController
+  # def create
+  #   @order = current_order
+  #   @order_item = @order.order_items.new(order_item_params)
+  #   @order.save
+  #   session[:order_id] = @order.id
+  # end
+
   def create
     @order = current_order
-    @order_item = @order.order_items.new(order_item_params)
-    @order.save
+    item = @order.order_items.where(params[:product_id]).first
+    if item
+      item.quantity += 1
+      item.save
+      @order_item = item
+    else
+      @order_item = @order.order_items.new(order_item_params)
+      @order.save
+    end
     session[:order_id] = @order.id
   end
 

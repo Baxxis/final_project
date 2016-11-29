@@ -9,6 +9,15 @@ class ProductsController < ApplicationController
     retreive_products
   end
 
+  def by_category
+    @products = Category.where("name LIKE '#{params[:name]}'").first.products
+                        .order('name')
+                        .page(params[:page]).per(5)
+    @categories = Category.all
+    @order_item = current_order.order_items.new
+    render 'index'
+  end
+
   def show
   end
 

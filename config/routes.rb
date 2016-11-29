@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   get 'cart', to: 'carts#show', as: 'cart'
   resources :order_items, only: [:create, :update, :destroy]
+  get 'login', to: 'session#new', as: 'new_login'
+  post 'create', to: 'session#create', as: 'create_login'
+  delete 'destroy', to: 'session#destroy', as: 'logout'
 
+  get '/products/:name', to: 'products#by_category', as: 'by_category'
   get '/', to: 'products#index', as: 'index'
   get '/products/:id', to: 'products#show', as: 'show'
   get '/about', to: 'pages#about', as: 'about'

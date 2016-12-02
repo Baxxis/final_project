@@ -1,0 +1,65 @@
+<div class="shopping-cart">
+  <h1>Order Review</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Quantity</th>
+        <th>Price Per Unit</th>
+        <th>Subtotal</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @order_items.each do |item| %>
+        <tr>
+          <td><%= item.product.name %></td>
+          <td><%= item.quantity %></td>
+          <td><%= item.price %></td>
+          <td><%= (item.price * item.quantity) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if @order.pst %>
+        <tr>
+          <td>PST: </td>
+          <td><% @order.pst %></td>
+        </tr>
+      <% end %>
+      <% if @order.gst %>
+        <tr>
+          <td>GST: </td>
+          <td><% @order.gst %></td>
+        </tr>
+      <% end %>
+      <% if @order.hst %>
+        <tr>
+          <td>HST: </td>
+          <td><% @order.pst %></td>
+        </tr>
+      <% end %>
+      <tr>
+        <td>
+          Sutotal:
+        </td>
+        <td>
+          <%= @order.subtotal %>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <%= link_to 'Checkout', checkout_path %>
+  <!-- <% if account_customer_info? %>
+    <%= link_to 'Checkout', checkout_path %>
+
+  <% end %> -->
+</div>

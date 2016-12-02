@@ -1,0 +1,76 @@
+<div class="shopping-cart">
+  <h1>Final Checkout</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Quantity</th>
+        <th>Price Per Unit</th>
+        <th>Subtotal</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @order_items.each do |item| %>
+        <tr>
+          <td><%= item.product.name %></td>
+          <td><%= item.quantity %></td>
+          <td><%= item.price %></td>
+          <td><%= (item.price * item.quantity) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+
+        <tr>
+          <td>PST: </td>
+          <td><%= @order.pst %></td>
+        </tr>
+
+      <% if @order.gst %>
+        <tr>
+          <td>GST: </td>
+          <td><%= @order.gst %></td>
+        </tr>
+      <% end %>
+      <% if @order.hst %>
+        <tr>
+          <td>HST: </td>
+          <td><%= @order.pst %></td>
+        </tr>
+      <% end %>
+      <tr>
+        <td>
+          Sutotal:
+        </td>
+        <td>
+          <%= @order.subtotal %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Total Taxes:
+        </td>
+        <td>
+          <%= @order.subtotal * (@order.pst + @order.gst + @order.hst) %>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Total:
+        </td>
+        <td>
+          <%= @order.subtotal + (@order.subtotal * (@order.pst + @order.gst + @order.hst) )%>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

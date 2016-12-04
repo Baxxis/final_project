@@ -5,5 +5,4 @@ class CartsControllerTest < ActionDispatch::IntegrationTest
     get carts_show_url
     assert_response :success
   end
-
 end

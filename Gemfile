@@ -54,3 +54,6 @@ gem 'stripe'
 
 # used for db data seeding
 gem 'yaml_db'
+
+# to manage env variables
+gem 'figaro'

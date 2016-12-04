@@ -8,7 +8,8 @@ class CustomerController < ApplicationController
   def create
     customer = Customer.new(customer_params)
     customer.account_id = session[:user_id]
-    render 'new' unless customer.save
+    # render 'new' unles
+    customer.save
     redirect_to(controller: :carts, action: :checkout)
   end
 

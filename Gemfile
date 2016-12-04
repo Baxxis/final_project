@@ -45,8 +45,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'carrierwave', '>= 1.0.0.rc', '< 2.0'
 
 # these 3 gems required for active admin
-gem 'devise'
 gem 'activeadmin', github: 'activeadmin'
+gem 'devise'
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 
 # Use stripe as payment system
@@ -54,3 +54,6 @@ gem 'stripe'
 
 # used for db data seeding
 gem 'yaml_db'
+
+# to manage env variables
+gem 'figaro'

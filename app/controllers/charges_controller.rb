@@ -1,5 +1,6 @@
 # Charges controller
 class ChargesController < ApplicationController
+  include SessionHelper
   def create
     @order = current_order
     @amount = ((@order.subtotal + (@order.subtotal * (@order.pst + @order.gst +
@@ -9,13 +10,13 @@ class ChargesController < ApplicationController
 
     require 'date'
     # save stripe customer id with stripe customer!
-    if @charge.paid && @charge.amount == @amount
+    if @charge.paid
       @order = current_order
       @order.order_date = DateTime.now
-      @order.customer_id = session[:user_id]
+      @order.customer_id = current_customer.id
       @order.order_status_id = 2
       @order.save
-      session.delete[:order_id]
+      session.delete(:order_id)
       # current_order = Order.new
     end
 

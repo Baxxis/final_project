@@ -99,6 +99,12 @@ GEM
       unf (>= 0.0.5, < 1.0.0)
     erubis (2.7.0)
     execjs (2.7.0)
+<<<<<<< HEAD
+=======
+    ffi (1.9.14-x86-mingw32)
+    figaro (1.1.1)
+      thor (~> 0.14)
+>>>>>>> da41df728faf09e3315b10907429ac8674c6cd46
     formtastic (3.1.4)
       actionpack (>= 3.2.13)
     formtastic_i18n (0.6.0)
@@ -177,6 +183,14 @@ GEM
     responders (2.3.0)
       railties (>= 4.2.0, < 5.1)
     rest-client (2.0.0)
+<<<<<<< HEAD
+=======
+      http-cookie (>= 1.0.2, < 2.0)
+      mime-types (>= 1.16, < 4.0)
+      netrc (~> 0.8)
+    rest-client (2.0.0-x86-mingw32)
+      ffi (~> 1.9)
+>>>>>>> da41df728faf09e3315b10907429ac8674c6cd46
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
@@ -210,6 +224,10 @@ GEM
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.2)
+<<<<<<< HEAD
+=======
+    unf_ext (0.0.7.2-x86-mingw32)
+>>>>>>> da41df728faf09e3315b10907429ac8674c6cd46
     warden (1.2.6)
       rack (>= 1.0)
     web-console (3.4.0)
@@ -233,6 +251,7 @@ DEPENDENCIES
   carrierwave (>= 1.0.0.rc, < 2.0)
   coffee-rails (~> 4.2)
   devise
+  figaro
   inherited_resources!
   jbuilder (~> 2.5)
   jquery-rails

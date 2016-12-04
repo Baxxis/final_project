@@ -242,6 +242,7 @@ DEPENDENCIES
   carrierwave (>= 1.0.0.rc, < 2.0)
   coffee-rails (~> 4.2)
   devise
+  rest-client
   inherited_resources!
   jbuilder (~> 2.5)
   jquery-rails

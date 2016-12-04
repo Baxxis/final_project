@@ -1,12 +1,5 @@
 # orderitem controller
 class OrderItemsController < ApplicationController
-  # def create
-  #   @order = current_order
-  #   @order_item = @order.order_items.new(order_item_params)
-  #   @order.save
-  #   session[:order_id] = @order.id
-  # end
-
   def create
     @order = current_order
     item = @order.order_items.where(params[:product_id]).first

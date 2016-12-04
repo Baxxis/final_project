@@ -1,4 +1,4 @@
-# asdokfjasdlk
+# Session Controller
 class SessionController < ApplicationController
   def new
     render 'checkout' if session[:user_id]
@@ -18,5 +18,7 @@ class SessionController < ApplicationController
   end
 
   def destroy
+    session[:user_id] = nil unless session[:user_id].nil?
+    redirect_to(controller: :products, action: :index)
   end
 end

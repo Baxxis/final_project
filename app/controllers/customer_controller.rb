@@ -12,11 +12,11 @@ class CustomerController < ApplicationController
     redirect_to(controller: :carts, action: :checkout)
   end
 
-  def update
-  end
+  # def update
+  # end
 
-  def destroy
-  end
+  # def destroy
+  # end
 
   private
 

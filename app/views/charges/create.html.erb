@@ -1,1 +1,2 @@
-<h2>Thanks, you paid <strong><%= number_to_currency(@charge.amount / 10000) %></strong>!</h2>
+<h2>Thanks, you paid <strong><%= number_to_currency(@charge.amount.to_d / 10000) %></strong>!</h2>
+<%= link_to 'Continue Shopping', index_path, class: 'btn btn-success' %>

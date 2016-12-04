@@ -1,0 +1,599 @@
+
+---
+accounts:
+  columns:
+  - id
+  - username
+  - password
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - test
+    - test
+    - '2016-11-30 01:47:22.297810'
+    - '2016-11-30 01:47:22.297810'
+  - - 2
+    - jeremy
+    - jeremy
+    - '2016-12-02 18:19:40.381434'
+    - '2016-12-02 18:19:40.381434'
+
+---
+admin_users:
+  columns:
+  - id
+  - email
+  - encrypted_password
+  - reset_password_token
+  - reset_password_sent_at
+  - remember_created_at
+  - sign_in_count
+  - current_sign_in_at
+  - last_sign_in_at
+  - current_sign_in_ip
+  - last_sign_in_ip
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - admin@example.com
+    - "$2a$11$gpaaZvLA7XSXdnl.CaLIAeS/ToA9p.WnGIrUF0UirS348O4TcfY1G"
+    - 
+    - 
+    - 
+    - 11
+    - '2016-12-04 17:39:13.237582'
+    - '2016-12-04 17:38:28.541029'
+    - "::1"
+    - "::1"
+    - '2016-11-15 01:58:27.778260'
+    - '2016-12-04 17:39:13.242595'
+
+---
+ar_internal_metadata:
+  columns:
+  - key
+  - value
+  - created_at
+  - updated_at
+  records: 
+  - - environment
+    - development
+    - '2016-11-02 02:06:35.521374'
+    - '2016-11-02 02:06:35.521374'
+
+---
+categories:
+  columns:
+  - id
+  - name
+  - description
+  - is_active
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - Test category
+    - for testing
+    - true
+    - '2016-11-02 02:49:25.995621'
+    - '2016-11-02 02:49:25.995621'
+  - - 2
+    - Food and Drink
+    - Edible and drinkable items for sale.
+    - true
+    - '2016-11-21 23:32:24.292738'
+    - '2016-11-21 23:32:24.292738'
+
+---
+customers:
+  columns:
+  - id
+  - name
+  - address
+  - city
+  - postal_code
+  - phone
+  - email
+  - province_id
+  - created_at
+  - updated_at
+  - account_id
+  records: 
+  - - 1
+    - Jeremy Ens
+    - 123 Easy Street
+    - Winnipeg
+    - R2C 104
+    - '2045555980'
+    - jeremy@example.com
+    - 1
+    - '2016-11-16 02:08:22.671588'
+    - '2016-11-16 02:08:22.671588'
+    - 
+  - - 2
+    - Jeremy Ens
+    - 123 Easy Street
+    - Winnipeg
+    - R2G 1V3
+    - '123456789'
+    - jeremyens@mail.com
+    - 1
+    - '2016-11-30 18:16:54.558167'
+    - '2016-11-30 18:16:54.558167'
+    - 1
+  - - 3
+    - Jeremy Ens
+    - 123 Easy Street
+    - Winnipeg
+    - R2G 1V3
+    - '15616148651'
+    - jeremyens@mail.com
+    - 1
+    - '2016-11-30 18:18:28.668079'
+    - '2016-11-30 18:18:28.668079'
+    - 1
+  - - 4
+    - Jeremy Ens
+    - 123 Easy Street
+    - Winnipeg
+    - R2G 1V3
+    - '5616148651'
+    - jeremyens@mail.com
+    - 1
+    - '2016-11-30 18:21:57.396556'
+    - '2016-11-30 18:21:57.396556'
+    - 1
+  - - 5
+    - Jeremy Ens
+    - 123 Easy Street
+    - Winnipeg
+    - R2G 1V3
+    - '1'
+    - jeremyens@mail.com
+    - 1
+    - '2016-11-30 18:25:56.684857'
+    - '2016-11-30 18:25:56.684857'
+    - 1
+  - - 6
+    - Jeremy Ens
+    - 123 Easy Street
+    - Winnipeg
+    - R2G 1V3
+    - '2'
+    - jeremyens@mail.com
+    - 1
+    - '2016-11-30 18:29:22.872987'
+    - '2016-11-30 18:29:22.872987'
+    - 1
+
+---
+order_items:
+  columns:
+  - id
+  - price
+  - quantity
+  - product_id
+  - order_id
+  - created_at
+  - updated_at
+  records: 
+  - - 3
+    - 5.5
+    - 3
+    - 4
+    - 1
+    - '2016-11-22 20:06:19.466223'
+    - '2016-11-23 19:59:07.001696'
+  - - 4
+    - 20
+    - 1
+    - 3
+    - 1
+    - '2016-11-22 20:06:30.414813'
+    - '2016-11-22 20:06:30.414813'
+  - - 7
+    - 20
+    - 1
+    - 3
+    - 2
+    - '2016-11-26 19:30:59.677920'
+    - '2016-11-26 19:30:59.677920'
+  - - 8
+    - 45
+    - 1
+    - 10
+    - 3
+    - '2016-11-29 17:57:25.701758'
+    - '2016-11-29 17:57:25.701758'
+  - - 9
+    - 45
+    - 1
+    - 10
+    - 4
+    - '2016-11-29 17:58:02.635096'
+    - '2016-11-29 17:58:02.635096'
+  - - 10
+    - 20
+    - 1
+    - 3
+    - 5
+    - '2016-12-02 18:40:47.684963'
+    - '2016-12-02 18:40:47.684963'
+  - - 11
+    - 20
+    - 1
+    - 3
+    - 6
+    - '2016-12-02 18:41:11.013319'
+    - '2016-12-02 18:41:11.013319'
+
+---
+order_statuses:
+  columns:
+  - id
+  - name
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - In Progress
+    - '2016-11-22 00:16:27.156466'
+    - '2016-11-22 00:16:27.156466'
+  - - 2
+    - Placed
+    - '2016-11-22 00:17:02.475431'
+    - '2016-11-22 00:17:02.475431'
+  - - 3
+    - Shipped
+    - '2016-11-22 00:17:20.552513'
+    - '2016-11-22 00:17:20.552513'
+  - - 4
+    - Cancelled
+    - '2016-11-22 00:17:44.340633'
+    - '2016-11-22 00:17:44.340633'
+
+---
+orders:
+  columns:
+  - id
+  - order_date
+  - ship_date
+  - pst
+  - gst
+  - hst
+  - customer_id
+  - order_status_id
+  - created_at
+  - updated_at
+  - subtotal
+  records: 
+  - - 1
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 1
+    - '2016-11-22 02:25:56.731209'
+    - '2016-11-23 18:03:59.374345'
+    - 29.94
+  - - 2
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 1
+    - '2016-11-26 19:30:59.662296'
+    - '2016-11-26 19:30:59.662296'
+    - 20
+  - - 3
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 1
+    - '2016-11-29 17:57:25.673577'
+    - '2016-11-29 17:57:25.673577'
+    - 45
+  - - 4
+    - '2016-12-02 17:40:56.676299'
+    - 
+    - 0.08
+    - 0.05
+    - 0
+    - 1
+    - 2
+    - '2016-11-29 17:58:02.602986'
+    - '2016-12-02 17:40:56.693848'
+    - 45
+  - - 5
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 1
+    - '2016-12-02 18:40:47.630880'
+    - '2016-12-02 18:40:47.630880'
+    - 20
+  - - 6
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 1
+    - '2016-12-02 18:41:10.997692'
+    - '2016-12-02 18:41:10.997692'
+    - 20
+
+---
+pages:
+  columns:
+  - id
+  - title
+  - content
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - About
+    - Daevok's Adventuring Supplies was founded in 1532 in the dwarven kingdom of
+      Belazur. Moved to Winnipeg in 1928 to help new settlers on their way to the
+      west. Daevok's has since been the number 1 adventuring supply store in Canada.
+    - '2016-11-21 18:06:36.073448'
+    - '2016-11-21 18:06:36.073448'
+  - - 2
+    - Contact Us
+    - "Address: 123 Easy Street, Winnipeg, MB\r\nPhone: 1-800-GET-GEAR (1-800-438-4327)\r\nEmail:
+      daevoks_supplies@adventuring.co\r\n\r\nHours of Operation:\r\nMon:   7am - 10pm\r\nTue:
+      \   7am - 10pm\r\nWed:   7am - 10pm\r\nThu:   7am - 10pm\r\nFri:     7am - 8pm\r\nSat:
+      \   6am - 11pm\r\nSun:   Closed"
+    - '2016-11-21 18:08:45.308214'
+    - '2016-11-21 18:11:07.512474'
+
+---
+products:
+  columns:
+  - id
+  - name
+  - description
+  - price
+  - quantity
+  - is_active
+  - created_at
+  - updated_at
+  - category_id
+  - image_url
+  records: 
+  - - 2
+    - Natural Hemp Rope - 50'
+    - test product 2
+    - 2.22
+    - 22
+    - true
+    - '2016-11-16 00:57:49.810209'
+    - '2016-11-17 20:07:08.497677'
+    - 1
+    - hemp_rope.jpg
+  - - 3
+    - Backpack
+    - Study travelling bag made of high quality deer leather. Can support up to 40lbs
+      of gear.
+    - 20
+    - 20
+    - true
+    - '2016-11-17 19:11:37.652505'
+    - '2016-11-17 19:11:37.652505'
+    - 1
+    - leather_backpack.jpg
+  - - 4
+    - Trail Rations - 3 meals/1 day
+    - These hearty rations will keep you going. Each pack contains 3 bars, which is
+      equivalent to a full day's worth of meals.
+    - 5.5
+    - 1000
+    - true
+    - '2016-11-17 19:17:49.642249'
+    - '2016-11-21 23:33:03.379011'
+    - 2
+    - trail_rations.png
+  - - 5
+    - Oil Lantern
+    - This lightweight, aluminium and glass lantern will show you the way and hold
+      the darkness at bay!
+    - 15.25
+    - 20
+    - true
+    - '2016-11-17 19:32:31.932899'
+    - '2016-11-17 21:13:10.589097'
+    - 1
+    - oil_lantern.jpg
+  - - 6
+    - Tent - Canvas
+    - The tent will keep you dry in the wettest of conditions! Packs into a compact
+      bundle for easy attachment to your backpack.
+    - 100
+    - 8
+    - true
+    - '2016-11-18 14:31:25.777115'
+    - '2016-11-18 14:31:25.777115'
+    - 1
+    - canvas_tentjpg.jpg
+  - - 7
+    - Lamp Oil
+    - 1L. Clean burning.
+    - 5
+    - 56
+    - true
+    - '2016-11-18 14:32:45.222022'
+    - '2016-11-18 14:32:45.222022'
+    - 1
+    - lamp_oil.jpg
+  - - 8
+    - Waterskin
+    - 1L waterskin made of deer hide.
+    - 10
+    - 11
+    - true
+    - '2016-11-18 14:34:20.839573'
+    - '2016-11-18 14:34:20.839573'
+    - 1
+    - waterskin.png
+  - - 9
+    - Mess Kit
+    - 'Army Surplus Mess Kit. Includes: cutlery, flask, pot.'
+    - 15
+    - 45
+    - true
+    - '2016-11-18 14:36:52.143687'
+    - '2016-11-18 14:36:52.143687'
+    - 1
+    - mess_kit.jpg
+  - - 10
+    - Bedroll
+    - 4' x 7' bedroll. Keeps you off the ground and warm in the night. Guaranteed
+      to keep the dew off your sleeping bad and hold off strong winds.
+    - 45
+    - 61
+    - true
+    - '2016-11-18 14:40:34.929894'
+    - '2016-11-18 14:40:34.929894'
+    - 1
+    - bedroll.jpg
+  - - 11
+    - Silk Rope - 50'
+    - Same strength as hemp rope but at 1/10th weight!
+    - 25
+    - 22
+    - true
+    - '2016-11-18 14:42:35.155317'
+    - '2016-11-18 14:42:35.155317'
+    - 1
+    - silk_rope.jpg
+
+---
+provinces:
+  columns:
+  - id
+  - name
+  - gst
+  - pst
+  - hst
+  - shortcode
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - Manitoba
+    - 5
+    - 8
+    - 0
+    - MB
+    - '2016-11-16 02:05:33.334542'
+    - '2016-11-18 14:43:52.124681'
+  - - 2
+    - Alberta
+    - 5
+    - 0
+    - 0
+    - AB
+    - '2016-11-18 14:44:44.558800'
+    - '2016-11-18 14:44:44.558800'
+  - - 3
+    - Saskatchewan
+    - 5
+    - 5
+    - 0
+    - SK
+    - '2016-11-18 14:45:45.717403'
+    - '2016-11-18 14:46:06.108099'
+  - - 4
+    - British Columbia
+    - 5
+    - 7
+    - 0
+    - BC
+    - '2016-11-18 14:46:45.816151'
+    - '2016-11-18 14:46:45.816151'
+  - - 5
+    - New Brunswick
+    - 0
+    - 0
+    - 15
+    - NB
+    - '2016-11-18 14:47:47.369284'
+    - '2016-11-18 14:48:12.105064'
+  - - 6
+    - Newfoundland
+    - 0
+    - 0
+    - 15
+    - NL
+    - '2016-11-18 14:48:53.372098'
+    - '2016-11-18 14:48:53.372098'
+  - - 7
+    - Nova Scotia
+    - 0
+    - 0
+    - 15
+    - NS
+    - '2016-11-18 14:49:27.408230'
+    - '2016-11-18 14:49:27.408230'
+  - - 8
+    - Northwest Territories
+    - 5
+    - 0
+    - 0
+    - NT
+    - '2016-11-18 14:50:07.380515'
+    - '2016-11-18 14:50:07.380515'
+  - - 9
+    - Nunavut
+    - 5
+    - 0
+    - 0
+    - NU
+    - '2016-11-18 14:50:45.558642'
+    - '2016-11-18 14:50:45.558642'
+  - - 10
+    - Ontario
+    - 0
+    - 0
+    - 13
+    - 'ON'
+    - '2016-11-18 14:51:22.636476'
+    - '2016-11-18 14:51:22.636476'
+  - - 11
+    - Prince Edward Island
+    - 0
+    - 0
+    - 15
+    - PEI
+    - '2016-11-18 14:52:03.806467'
+    - '2016-11-18 14:52:03.806467'
+  - - 12
+    - Quebec
+    - 5
+    - 9.975
+    - 0
+    - QC
+    - '2016-11-18 14:52:40.566230'
+    - '2016-11-18 14:52:40.566230'
+  - - 13
+    - Yukon Territory
+    - 5
+    - 0
+    - 0
+    - YT
+    - '2016-11-18 14:53:28.974624'
+    - '2016-11-18 14:53:28.974624'

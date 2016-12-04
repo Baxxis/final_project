@@ -18,12 +18,7 @@ class ProductsController < ApplicationController
     render 'index'
   end
 
-  def show
-  end
-
-  # def by_category
-  #   @products = Product.where()
-  # end
+  def show() end
 
   private
 

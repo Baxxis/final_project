@@ -1,4 +1,4 @@
-# asdfja
+# Accounts controller
 class AccountsController < ApplicationController
   def new
     @account = Account.new
@@ -11,11 +11,11 @@ class AccountsController < ApplicationController
     redirect_to url_for(controller: :session, action: :new)
   end
 
-  def edit
-  end
+  # def edit
+  # end
 
-  def destroy
-  end
+  # def destroy
+  # end
 
   private
 

@@ -2,9 +2,10 @@ Rails.application.routes.draw do
   get 'cart', to: 'carts#show', as: 'cart'
   resources :order_items, only: [:create, :update, :destroy]
   resources :customer, only: [:new, :create, :update, :destroy]
+  resources :charges, only: [:new, :create]
   get 'login', to: 'session#new', as: 'login'
   post 'login', to: 'session#create', as: 'create_session'
-  delete 'destroy', to: 'session#destroy', as: 'logout'
+  get 'logout', to: 'session#destroy', as: 'logout'
   get 'signup', to: 'accounts#new', as: 'signup'
   post 'signup', to: 'accounts#create', as: 'accounts'
   get 'process_cart', to: 'carts#process_cart', as: 'process_cart'

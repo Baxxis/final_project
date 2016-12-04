@@ -4,7 +4,7 @@ AllCops:
     - Rakefile
     - config.ru
     - lib/**/*.rake
-    - app/*
+    - app/models/**/*
+    - app/controllers/**/*
   Exclude:
     - db/schema.rb
-    - test

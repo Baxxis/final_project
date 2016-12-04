@@ -9,7 +9,7 @@ module SessionHelper
   end
 
   def current_customer
-    @current_customer ||= Customer.find_by(account_id: session[:user_id])
+    @current_customer = Customer.find_by(account_id: session[:user_id])
   end
 
   # Returns true if the user is logged in, false otherwise.

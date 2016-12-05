@@ -34,7 +34,7 @@ class ProductsController < ApplicationController
     elsif params[:category_id]
       @products = category_search
     else
-      @products = Product.all.order('created_at DESC')
+      @products = all_products
     end
   end
 
@@ -63,5 +63,10 @@ class ProductsController < ApplicationController
     @products = Product.get_by_category_id(params[:category_id])
                        .order('created_at DESC')
                        .page(params[:page]).per(5)
+  end
+
+  def all_products
+    @products = Product.all.order('created_at DESC').page(params[:page])
+                       .per(5)
   end
 end

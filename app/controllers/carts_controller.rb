@@ -1,5 +1,7 @@
 # Carts controller
 class CartsController < ApplicationController
+  before_action :set_current_order
+  before_action :calculate_amount, only: [:checkout]
   include SessionHelper
   def show
     @order_items = current_order.order_items
@@ -7,22 +9,32 @@ class CartsController < ApplicationController
 
   def process_cart
     @order_items = current_order.order_items
-    @order = current_order
   end
 
   def checkout
-    customer = current_customer
     if account_customer_info?
-      @order = current_order
-      @description = 'description of charge'
-      @order_items = current_order.order_items
-      @order.pst = customer.province.pst / 100
-      @order.gst = customer.province.gst / 100
-      @order.hst = customer.province.hst / 100
-      @amount = @order.subtotal + (@order.subtotal * (@order.pst + @order.gst + @order.hst))
-      @order.save
+      update_order
     else
       redirect_to(controller: :customer, action: :new)
     end
+  end
+
+  def update_order
+    customer = current_customer
+    @description = 'description of charge'
+    @order.update(pst: customer.province.pst / 100,
+                  gst: customer.province.gst / 100,
+                  hst: customer.province.hst / 100)
+    @order_items = current_order.order_items
+    @order.save
+  end
+
+  def set_current_order
+    @order = current_order
+  end
+
+  def calculate_amount
+    @amount = @order.subtotal + (@order.subtotal * (@order.pst + @order.gst +
+              @order.hst))
   end
 end

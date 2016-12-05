@@ -57,3 +57,6 @@ gem 'yaml_db'
 
 # to manage env variables
 gem 'figaro'
+
+# for pagination
+gem 'kaminari'

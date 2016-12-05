@@ -6,8 +6,9 @@ class SessionController < ApplicationController
   end
 
   def create
+
     if @account && @account.password == params[:session][:password]
-      log_in account
+      log_in(@account)
       redirect_to url_for(controller: :carts, action: :process_cart)
     else
       flash[:danger] = 'Invalid username/password combination'

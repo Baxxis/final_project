@@ -1,8 +1,7 @@
 # Carts controller
 class CartsController < ApplicationController
   before_action :set_current_order
-  before_action :calculate_amount, only: [:checkout, :calculate_amount,
-                                          :update_order]
+  before_action :calculate_amount, only: [:checkout, :calculate_amount]
   include SessionHelper
   def show
     @order_items = current_order.order_items
